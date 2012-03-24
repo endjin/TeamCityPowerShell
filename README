@@ -138,13 +138,13 @@ To run the full suite of BDD specs invoke "run-specs.bat" in the root of this pr
 
  * denotes that the function has a ignored specification pending investigation
  
+ 
 Ingredients
 ===========
 TeamCityPowerShell makes use of the following tools and frameworks:
 
  o TeamCitySharp - https://github.com/stack72/TeamCitySharp 
  o Pester - https://github.com/scottmuc/Pester 
-
 
 
 Install
@@ -175,6 +175,7 @@ Credits & Thanks
 ================
 James Dawson for being the usual partner in crime
 Paul Stack & Contributors for TeamCitySharp
+Copyright (c) 2012 endjin (@endjin)
 
 
 Version History
