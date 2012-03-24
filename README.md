@@ -26,7 +26,7 @@ About
 
 TeamCityPowerShell is a series of 49 cmdlets that you can use to query TeamCity for information its state.
 
-```c#
+<pre>
 $parameters = @{ 
 	 ConnectionDetails = @{
 		 ServerUrl = "teamcity.codebetter.com"
@@ -43,99 +43,97 @@ foreach($build in $builds)
 {
 	Write-Host $build.Number
 }
-```
+</pre>
 
 
 Usage
 =====
 The following cmdlets are supported:
-
-```c#
-  Get-AllAgents
-  Get-AllBuildConfigs
-  Get-ArtifactsByBuildId
-  Get-Artifact
-  Get-ArtifactsAsArchive *
-  Get-BuildConfigByConfigurationName
-  Get-AllBuildsOfStatusSinceDate
-  Get-AllBuildsSinceDate
-  Get-AllChanges
-  Get-AllGroupsByUserName
-  Get-AllProjects
-  Get-AllRolesByUserName *
-  Get-AllServerPlugins *
-  Get-AllUserGroups
-  Get-AllUserRolesByUserGroup
-  Get-AllUsers *
-  Get-AllUsersByUserGroup
-  Get-AllVcsRoots
-  Get-BuildConfigByConfigurationId
-  Get-BuildConfigByConfigurationName
-  Get-BuildConfigByProjectIdAndConfigurationId
-  Get-BuildConfigByProjectIdAndConfigurationName
-  Get-BuildConfigByProjectNameAndConfigurationId
-  Get-BuildConfigByProjectNameAndConfigurationName
-  Get-BuildConfigsByBuildConfigId
-  Get-BuildConfigsByConfigIdAndTag
-  Get-BuildConfigsByConfigIdAndTags
-  Get-BuildConfigsByProjectId
-  Get-BuildConfigsByProjectName
-  Get-BuildsByBuildLocator *
-  Get-BuildsByUserName
-  Get-ChangeDetailsByBuildConfigId
-  Get-ChangeDetailsByChangeId
-  Get-ErrorBuildsByBuildConfigId *
-  Get-FailedBuildsByBuildConfigId *
-  Get-LastBuildByAgent
-  Get-LastBuildByBuildConfigId
-  Get-LastChangeDetailByBuildConfigId
-  Get-LastErrorBuildByBuildConfigId *
-  Get-LastFailedBuildByBuildConfigId
-  Get-LastSuccessfulBuildByBuildConfigId
-  Get-LatestArtifact
-  Get-NonSuccessfulBuildsForUser
-  Get-ProjectById
-  Get-ProjectByName
-  Get-ServerInfo
-  Get-SuccessfulBuildsByBuildConfigId
-  Get-VcsRootById
-  New-TeamCityUrl
-  New-TeamCityWebClientConnection
-```
- 
+<pre>
+ o Get-AllAgents
+ o Get-AllBuildConfigs
+ o Get-ArtifactsByBuildId
+ o Get-Artifact
+ o Get-ArtifactsAsArchive *
+ o Get-BuildConfigByConfigurationName
+ o Get-AllBuildsOfStatusSinceDate
+ o Get-AllBuildsSinceDate
+ o Get-AllChanges
+ o Get-AllGroupsByUserName
+ o Get-AllProjects
+ o Get-AllRolesByUserName *
+ o Get-AllServerPlugins *
+ o Get-AllUserGroups
+ o Get-AllUserRolesByUserGroup
+ o Get-AllUsers *
+ o Get-AllUsersByUserGroup
+ o Get-AllVcsRoots
+ o Get-BuildConfigByConfigurationId
+ o Get-BuildConfigByConfigurationName
+ o Get-BuildConfigByProjectIdAndConfigurationId
+ o Get-BuildConfigByProjectIdAndConfigurationName
+ o Get-BuildConfigByProjectNameAndConfigurationId
+ o Get-BuildConfigByProjectNameAndConfigurationName
+ o Get-BuildConfigsByBuildConfigId
+ o Get-BuildConfigsByConfigIdAndTag
+ o Get-BuildConfigsByConfigIdAndTags
+ o Get-BuildConfigsByProjectId
+ o Get-BuildConfigsByProjectName
+ o Get-BuildsByBuildLocator *
+ o Get-BuildsByUserName
+ o Get-ChangeDetailsByBuildConfigId
+ o Get-ChangeDetailsByChangeId
+ o Get-ErrorBuildsByBuildConfigId *
+ o Get-FailedBuildsByBuildConfigId *
+ o Get-LastBuildByAgent
+ o Get-LastBuildByBuildConfigId
+ o Get-LastChangeDetailByBuildConfigId
+ o Get-LastErrorBuildByBuildConfigId *
+ o Get-LastFailedBuildByBuildConfigId
+ o Get-LastSuccessfulBuildByBuildConfigId
+ o Get-LatestArtifact
+ o Get-NonSuccessfulBuildsForUser
+ o Get-ProjectById
+ o Get-ProjectByName
+ o Get-ServerInfo
+ o Get-SuccessfulBuildsByBuildConfigId
+ o Get-VcsRootById
+ o New-TeamCityUrl
+ o New-TeamCityWebClientConnection
+</pre> 
 To discover what parameters are required for each cmdlet use the Get-Help cmdlet i.e.:
  
-Get-Help Get-BuildConfigsByBuildConfigId
+	Get-Help Get-BuildConfigsByBuildConfigId
 
 which will return
 
-Get-BuildConfigsByBuildConfigId [[-ConnectionDetails] <Hashtable>] [[-BuildConfigId] <String>]
+	Get-BuildConfigsByBuildConfigId [[-ConnectionDetails] <Hashtable>] [[-BuildConfigId] <String>]
 
 The ConnectionDetails hashtable requires the following values
 
-ConnectionDetails = @{
-	ServerUrl = "teamcity.codebetter.com"
-	Credential = New-Object System.Management.Automation.PSCredential("teamcitysharpuser", (ConvertTo-SecureString "qwerty" -asplaintext -force))
-	UseSsl = $false
-	IsGuest = $false 
-}
+	ConnectionDetails = @{
+		ServerUrl = "teamcity.codebetter.com"
+		Credential = New-Object System.Management.Automation.PSCredential("teamcitysharpuser", (ConvertTo-SecureString "qwerty" -asplaintext -force))
+		UseSsl = $false
+		IsGuest = $false 
+	}
 
 At a minimum the following values are required:
 
-ConnectionDetails = @{
-	ServerUrl = "teamcity.codebetter.com"
-	Credential = New-Object System.Management.Automation.PSCredential("teamcitysharpuser", (ConvertTo-SecureString "qwerty" -asplaintext -force))
-}
+	ConnectionDetails = @{
+		ServerUrl = "teamcity.codebetter.com"
+		Credential = New-Object System.Management.Automation.PSCredential("teamcitysharpuser", (ConvertTo-SecureString "qwerty" -asplaintext -force))
+	}
 
 If you don't want to embedd TeamCity credentials you can enter them interactively using:
 
-$parameters = @{ 
-	 ConnectionDetails = @{
-		 ServerUrl = "teamcity.codebetter.com"
-		 Credential = Get-Credential
-	 }
-	 BuildConfigId = "bt437"
-}
+	$parameters = @{ 
+		ConnectionDetails = @{
+			ServerUrl = "teamcity.codebetter.com"
+			Credential = Get-Credential
+		}
+		BuildConfigId = "bt437"
+	}
 
 Alternatively you can retrieve them disk using this PowerShell Cookbook recipie: http://www.leeholmes.com/blog/2008/06/04/importing-and-exporting-credentials-in-powershell/
 
@@ -161,10 +159,10 @@ TeamCityPowerShell depends on TeamCitySharp which is a .NET 4.0 application. By 
 
 To import the module use standard PowerShell syntax:
 
-Import-Module C:\Code\OSS\TeamCityPowerShell\Modules\TeamCity
+	Import-Module C:\Code\OSS\TeamCityPowerShell\Modules\TeamCity
 
-$path = Split-Path -Parent $MyInvocation.MyCommand.Path
-Import-Module (Join-Path $path "Modules") -Force -DisableNameChecking
+	$path = Split-Path -Parent $MyInvocation.MyCommand.Path
+	Import-Module (Join-Path $path "Modules") -Force -DisableNameChecking
 
 
 Contribute
