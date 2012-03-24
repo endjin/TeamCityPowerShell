@@ -23,7 +23,7 @@ About
 
 TeamCityPowerShell is a series of 49 cmdlets that you can use to query TeamCity for information its state.
 
-$parameters = @{ 
+```$parameters = @{ 
 	 ConnectionDetails = @{
 		 ServerUrl = "teamcity.codebetter.com"
 		 Credential = New-Object System.Management.Automation.PSCredential("teamcitysharpuser", (ConvertTo-SecureString "qwerty" -asplaintext -force))
@@ -31,7 +31,7 @@ $parameters = @{
 		 IsGuest = $false 
 	 }
 	 BuildConfigId = "bt437"
-}
+}```
 
 $builds = Get-BuildConfigsByBuildConfigId @parameters
 
