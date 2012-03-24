@@ -1,3 +1,4 @@
+<pre>
  ______                            ____         __                
 /\__  _\                          /\  _`\    __/\ \__             
 \/_/\ \/    __     __      ___ ___\ \ \/\_\ /\_\ \ ,_\  __  __    
@@ -15,6 +16,8 @@
    \ \_\ \____/\ \___x___/'\ \____\ \_\  \ `\____\ \_\ \_\ \____\/\____\\____\
     \/_/\/___/  \/__//__/   \/____/\/_/   \/_____/\/_/\/_/\/____/\/____//____/
 
+</pre>
+
 TeamCityPowerShell v1.0.0.0 - Powered by endjin
 ===============================================
 
@@ -23,7 +26,7 @@ About
 
 TeamCityPowerShell is a series of 49 cmdlets that you can use to query TeamCity for information its state.
 
-
+```c#
 $parameters = @{ 
 	 ConnectionDetails = @{
 		 ServerUrl = "teamcity.codebetter.com"
@@ -47,56 +50,58 @@ Usage
 =====
 The following cmdlets are supported:
 
- o Get-AllAgents
- o Get-AllBuildConfigs
- o Get-ArtifactsByBuildId
- o Get-Artifact
- o Get-ArtifactsAsArchive *
- o Get-BuildConfigByConfigurationName
- o Get-AllBuildsOfStatusSinceDate
- o Get-AllBuildsSinceDate
- o Get-AllChanges
- o Get-AllGroupsByUserName
- o Get-AllProjects
- o Get-AllRolesByUserName *
- o Get-AllServerPlugins *
- o Get-AllUserGroups
- o Get-AllUserRolesByUserGroup
- o Get-AllUsers *
- o Get-AllUsersByUserGroup
- o Get-AllVcsRoots
- o Get-BuildConfigByConfigurationId
- o Get-BuildConfigByConfigurationName
- o Get-BuildConfigByProjectIdAndConfigurationId
- o Get-BuildConfigByProjectIdAndConfigurationName
- o Get-BuildConfigByProjectNameAndConfigurationId
- o Get-BuildConfigByProjectNameAndConfigurationName
- o Get-BuildConfigsByBuildConfigId
- o Get-BuildConfigsByConfigIdAndTag
- o Get-BuildConfigsByConfigIdAndTags
- o Get-BuildConfigsByProjectId
- o Get-BuildConfigsByProjectName
- o Get-BuildsByBuildLocator *
- o Get-BuildsByUserName
- o Get-ChangeDetailsByBuildConfigId
- o Get-ChangeDetailsByChangeId
- o Get-ErrorBuildsByBuildConfigId *
- o Get-FailedBuildsByBuildConfigId *
- o Get-LastBuildByAgent
- o Get-LastBuildByBuildConfigId
- o Get-LastChangeDetailByBuildConfigId
- o Get-LastErrorBuildByBuildConfigId *
- o Get-LastFailedBuildByBuildConfigId
- o Get-LastSuccessfulBuildByBuildConfigId
- o Get-LatestArtifact
- o Get-NonSuccessfulBuildsForUser
- o Get-ProjectById
- o Get-ProjectByName
- o Get-ServerInfo
- o Get-SuccessfulBuildsByBuildConfigId
- o Get-VcsRootById
- o New-TeamCityUrl
- o New-TeamCityWebClientConnection
+```c#
+  Get-AllAgents
+  Get-AllBuildConfigs
+  Get-ArtifactsByBuildId
+  Get-Artifact
+  Get-ArtifactsAsArchive *
+  Get-BuildConfigByConfigurationName
+  Get-AllBuildsOfStatusSinceDate
+  Get-AllBuildsSinceDate
+  Get-AllChanges
+  Get-AllGroupsByUserName
+  Get-AllProjects
+  Get-AllRolesByUserName *
+  Get-AllServerPlugins *
+  Get-AllUserGroups
+  Get-AllUserRolesByUserGroup
+  Get-AllUsers *
+  Get-AllUsersByUserGroup
+  Get-AllVcsRoots
+  Get-BuildConfigByConfigurationId
+  Get-BuildConfigByConfigurationName
+  Get-BuildConfigByProjectIdAndConfigurationId
+  Get-BuildConfigByProjectIdAndConfigurationName
+  Get-BuildConfigByProjectNameAndConfigurationId
+  Get-BuildConfigByProjectNameAndConfigurationName
+  Get-BuildConfigsByBuildConfigId
+  Get-BuildConfigsByConfigIdAndTag
+  Get-BuildConfigsByConfigIdAndTags
+  Get-BuildConfigsByProjectId
+  Get-BuildConfigsByProjectName
+  Get-BuildsByBuildLocator *
+  Get-BuildsByUserName
+  Get-ChangeDetailsByBuildConfigId
+  Get-ChangeDetailsByChangeId
+  Get-ErrorBuildsByBuildConfigId *
+  Get-FailedBuildsByBuildConfigId *
+  Get-LastBuildByAgent
+  Get-LastBuildByBuildConfigId
+  Get-LastChangeDetailByBuildConfigId
+  Get-LastErrorBuildByBuildConfigId *
+  Get-LastFailedBuildByBuildConfigId
+  Get-LastSuccessfulBuildByBuildConfigId
+  Get-LatestArtifact
+  Get-NonSuccessfulBuildsForUser
+  Get-ProjectById
+  Get-ProjectByName
+  Get-ServerInfo
+  Get-SuccessfulBuildsByBuildConfigId
+  Get-VcsRootById
+  New-TeamCityUrl
+  New-TeamCityWebClientConnection
+```
  
 To discover what parameters are required for each cmdlet use the Get-Help cmdlet i.e.:
  
