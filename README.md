@@ -173,13 +173,16 @@ http://github.com/endjin/TeamCityPowerShell
 Support / Help
 ==============
 Follow http://twitter.com/endjin on twitter.
+
 Report bugs & issues on https://github.com/endjin/TeamCityPowerShell/issues
 
 
 Credits & Thanks
 ================
 James Dawson for being the usual partner in crime
+
 Paul Stack & Contributors for TeamCitySharp
+
 Copyright (c) 2012 endjin (@endjin)
 
 
