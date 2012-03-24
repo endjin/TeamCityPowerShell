@@ -161,6 +161,8 @@ To import the module use standard PowerShell syntax:
 
 	Import-Module C:\Code\OSS\TeamCityPowerShell\Modules\TeamCity
 
+Or if you wish to load everything from the Modules directory, which will sit under your consuming script - you can use the following commands:
+	
 	$path = Split-Path -Parent $MyInvocation.MyCommand.Path
 	Import-Module (Join-Path $path "Modules") -Force -DisableNameChecking
 
