@@ -23,7 +23,7 @@ About
 
 TeamCityPowerShell is a series of 49 cmdlets that you can use to query TeamCity for information its state.
 
-```
+
 $parameters = @{ 
 	 ConnectionDetails = @{
 		 ServerUrl = "teamcity.codebetter.com"
