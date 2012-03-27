@@ -24,7 +24,7 @@ TeamCityPowerShell v1.0.0.0 - Powered by endjin
 About 
 =====
 
-TeamCityPowerShell is a series of 49 cmdlets that you can use to query TeamCity for information its state.
+TeamCityPowerShell is a series of 49 cmdlets that you can use to query TeamCity for information about its state.
 
 <pre>
 $parameters = @{ 
