@@ -121,6 +121,36 @@ Describe "Get-Artifact" {
     }
 }
 
+Describe "Get-ArtifactByBuildNumber" {
+
+ 	When "asked to download a specific artifact for a given build configuration and build number, it should download the artifact" { 
+		
+		$parameters = @{ 
+						 ConnectionDetails = @{
+						 	ServerUrl = "teamcity.codebetter.com"
+							Credential = New-Object System.Management.Automation.PSCredential("teamcitysharpuser", (ConvertTo-SecureString "qwerty" -asplaintext -force))
+					 		UseSsl = $false
+					 		IsGuest = $false 
+					     }
+						 BuildConfigId = "bt87"
+						 BuildNumber = "4"
+						 ArtifactName = "FluentDot.sln.dups.xml"
+						 SavePath = "C:\Temp\Get-ArtifactByBuildNumber\FluentDot.sln.dups.xml"
+					   }
+		
+		if (!(Test-Path "C:\Temp\Get-ArtifactByBuildNumber\"))
+    	{
+	    	New-Item "C:\Temp\Get-ArtifactByBuildNumber\" -type directory | Out-Null
+		}
+							  
+		Get-ArtifactByBuildNumber @parameters
+		
+        $parameters.SavePath.should.exist()
+		
+		Remove-Item $parameters.SavePath -Force
+    }
+}
+
 Describe "Get-LatestArtifact" {
 
  	When "asked to download a specific artifact as an archive for a given build configuration and build id, it should download the artifact" { 
