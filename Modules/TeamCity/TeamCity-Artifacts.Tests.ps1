@@ -32,6 +32,21 @@ Describe "New-TeamCityWebClientConnection" {
 		
 		$connection.Credentials.UserName.should.match("teamcitysharpuser")
     }
+
+    When "given connection details with credentials and Basic mode, Authorization header should be populated" { 
+	
+		$parameters = @{ 
+						 ConnectionDetails = @{
+						 	ServerUrl = "teamcity.codebetter.com"
+							Credential = New-Object System.Management.Automation.PSCredential("teamcitysharpuser", (ConvertTo-SecureString "qwerty" -asplaintext -force))
+							UseSsl = $false
+							UseBasic = $true
+						}}
+	
+		$connection = New-TeamCityWebClientConnection @parameters
+		
+		$connection.Headers['Authorization'].should.match("dGVhbWNpdHlzaGFycHVzZXI6cXdlcnR5")
+    }
 }
 
 Describe "New-TeamCityUrl" {
